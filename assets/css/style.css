@@ -1,0 +1,42 @@
+.app {
+    overflow: hidden;
+}
+
+.header {
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    background-color: #0F2854;
+    color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__navbar--logo {
+    font-size: 2.6rem;
+    font-weight: bold;
+}
+
+.header__navbar--list {
+    display: flex;
+    list-style: none;
+    width: 30%;
+    justify-content: space-between;
+}
+
+.header__navbar--item {
+    display: flex;
+}
+
+.header__navbar--link {
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.6rem;
+}
