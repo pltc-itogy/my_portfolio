@@ -1,5 +1,6 @@
 :root {
     --white-color: #fff;
+    --text-color: #333;
 }
 
 * {
@@ -11,6 +12,50 @@
 html {
     font-size: 62.5%;
     line-height: 1.6rem;
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+}
+
+h1, h2, h3, 
+.navbar__link, 
+.navbar--logo {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 12px 24px;
+    border-radius: 50px;
+
+    color: var(--text-color);
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+

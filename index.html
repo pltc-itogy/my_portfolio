@@ -1,47 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My information</title>
+    <title>My Portfolio</title>
+
+    <!-- Javascript -->
+    <script src="script.js" defer></script>
+
+    <!-- Font Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Open Sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
     <!-- My Library -->
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
-    <div class="app">
-        <div class="header">
-            <div class="grid wide">
-                <!-- Navigation Start -->
-                <nav class="header__navbar">
-                    <div class="header__navbar--logo">My Portfolio</div>
 
-                    <ul class="header__navbar--list">
-                        <li class="header__navbar--item">
-                            <a href="" class="header__navbar--link">
-                                Trang chủ
-                            </a>
-                        </li>
-                        <li class="header__navbar--item">
-                            <a href="" class="header__navbar--link">
-                                Thông tin cá nhân
-                            </a>
-                        </li>
-                        <li class="header__navbar--item">
-                            <a href="" class="header__navbar--link">
-                                Dự án
-                            </a>
-                        </li>
-                        <li class="header__navbar--item">
-                            <a href="" class="header__navbar--link">
-                                Liên hệ
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+<body>
+    <!-- Navigation -->
+    <nav id="navigation" class="navigation">
+        <div class="grid wide">
+            <div class="navbar__container">
+                <!-- Logo -->
+                <div class="navbar__logo">My Portfolio</div>
+
+                <!-- List -->
+                <ul class="navbar__list">
+                    <li class="navbar__item">
+                        <a href="#header" class="navbar__link">
+                            Home
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#about" class="navbar__link">
+                            About
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#skills" class="navbar__link">
+                            Skills
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#projects" class="navbar__link">
+                            Projects
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#contact" class="navbar__link btn">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="grid wide">
+            <div class="row">
+                Day la header
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+        <!-- About -->
+        <section id="about" class="about">
+            <div class="grid wide">
+                <div class="row">
+                    Day la About
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="skills">
+            <div class="grid wide">
+                <div class="row">
+                    Day la Skills
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="projects">
+            <div class="grid wide">
+                <div class="row">
+                    Day la Project
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="footer">
+        <div class="grid wide">
+            <div class="row">
+                Day la contact
+            </div>
+        </div>
+    </footer>
+
 </body>
+
 </html>
