@@ -12,7 +12,12 @@
     <!-- Font Montserrat & Open Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
     <!-- My Library -->
     <link rel="stylesheet" href="./assets/css/grid.css">
@@ -23,76 +28,71 @@
 <body>
     <!-- Navigation -->
     <nav id="navigation" class="navigation">
-        <div class="grid wide">
-            <div class="navbar__container">
-                <!-- Logo -->
-                <div class="navbar__logo">My Portfolio</div>
-
-                <!-- List -->
-                <ul class="navbar__list">
-                    <li class="navbar__item">
-                        <a href="#header" class="navbar__link">
-                            Home
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#about" class="navbar__link">
-                            About
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#skills" class="navbar__link">
-                            Skills
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#projects" class="navbar__link">
-                            Projects
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#contact" class="navbar__link btn">
-                            Contact
-                        </a>
-                    </li>
-                </ul>
+        <div class="navbar__container">
+            <!-- Logo -->
+            <div class="navbar__logo">
+                <a href="#header" class="navbar__logo--link">pltc._</a>
             </div>
+
+            <!-- List -->
+            <ul class="navbar__list">
+                <li class="navbar__item">
+                    <a href="#header" class="navbar__link navbar__link--active">
+                        Home
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#about" class="navbar__link">
+                        About
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#skills" class="navbar__link">
+                        Skills
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#projects" class="navbar__link">
+                        Projects
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#contact" class="navbar__link btn">
+                        Contact
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header id="header" class="header">
-        <div class="grid wide">
-            <div class="row">
-                <div class="col l-12 m-12 c-12">
-                    <div class="header__container">
-                        <span class="header__label">WELCOME TO MY CREATIVE SPACE</span>
+    <!-- Main -->
+    <main class="main">
+        <!-- Header -->
+        <header id="header" class="header tab-content active">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-12 m-12 c-12">
+                        <div class="header__container">
+                            <span class="header__label">WELCOME TO MY CREATIVE SPACE</span>
 
-                        <h1 class="header__slogan">Building Digital Experiences <br> That Matter</h1>
+                            <h1 class="header__name">Hi, I'm Cuong <br> - a Front-End Developer</h1>
 
-                        <div class="header__info">
-                            <h2 class="header__name">Hi, I'm Phan Le Trung Cuong <br> - a Front-End Developer</h2>
+                            <div class="header__info">
 
-                            <div class="header__img-wrap">
-                                <img src="./assets/imgs/avatar.jpg" alt="" class="header__img">
+                                <h2 class="header__desc">Focusing on building high-end web applications with clean code and pixel-perfect interfaces. <br> Turning complex problems into elegant digital solutions.</h2>
                             </div>
 
-                            <h2 class="header__desc">A passionate Web Developer dedicated to crafting high-performance, visually stunning, and user-centric websites.</h2>
+                            <a href="#projects" class="header__cta-btn btn">
+                                Explore My Work
+                            </a>
                         </div>
-
-                        <a href="#projects" class="header__cta-btn btn">
-                            Explore My Work
-                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- Main -->
-    <main class="main">
         <!-- About -->
-        <section id="about" class="about">
+        <section id="about" class="about tab-content">
             <div class="grid wide">
                 <div class="row">
                     Day la About
@@ -101,7 +101,7 @@
         </section>
 
         <!-- Skills -->
-        <section id="skills" class="skills">
+        <section id="skills" class="skills tab-content">
             <div class="grid wide">
                 <div class="row">
                     Day la Skills
@@ -110,7 +110,7 @@
         </section>
 
         <!-- Projects -->
-        <section id="projects" class="projects">
+        <section id="projects" class="projects tab-content">
             <div class="grid wide">
                 <div class="row">
                     Day la Project
@@ -118,16 +118,44 @@
             </div>
         </section>
 
-    </main>
-
-    <!-- Footer / Contact -->
-    <footer id="contact" class="footer">
-        <div class="grid wide">
-            <div class="row">
-                Day la contact
+        <!-- Contact -->
+        <section id="contact" class="contact tab-content">
+            <div class="grid wide">
+                <div class="row">
+                    Day la Contact
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="grid wide">
+                <div class="footer__container">
+                    <div class="footer__copyright">© 2026 pltc. All rights reserved.</div>
+
+                    <div class="footer__contacts">
+                        <ul class="footer__socials-list">
+                            <li class="footer__socials-item">
+                                <a href="" class="footer__socials-item--link">
+                                    <i class="fa-brands fa-square-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="footer__socials-item">
+                                <a href="" class="footer__socials-item--link">
+                                    <i class="fa-brands fa-square-github"></i>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="footer__mail">
+                            <i class="fa-solid fa-envelope"></i>
+                            trungcuong.2006tn@gmail.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
 
 </body>
 

@@ -23,6 +23,13 @@ body {
     line-height: 1.6rem;
 }
 
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden; 
+}
+
 h1, h2, h3, span
 .navbar__link, 
 .navbar--logo {
@@ -43,7 +50,7 @@ h1, h2, h3, span
     transition: all 0.3s ease;
     cursor: pointer;
     border: 2px solid transparent;
-    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 .btn:hover {
