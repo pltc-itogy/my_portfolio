@@ -128,6 +128,16 @@
     display: none;
 }
 
+/* Main */
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+}
+
 /* Header */
 .header {
     flex: 1 0 auto !important;
@@ -143,12 +153,11 @@
 
 .header__container {
     display: flex;
-    padding-top: 70px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 60px;
+    gap: 40px;
     position: relative;
     z-index: 1;
 }
@@ -158,7 +167,7 @@
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--label-color);
 }
 
 .header__name {
@@ -188,7 +197,7 @@
 }
 
 .header__cta-btn {
-    transform: translateY(-25px);
+    display: inline-block;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background: rgba(255, 255, 255, 0.1);
     color: white;
@@ -200,7 +209,6 @@
     font-family: 'Montserrat', sans-serif;
     border-radius: 50px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    display: inline-block;
 }
 
 .header__cta-btn:hover {
@@ -211,19 +219,77 @@
     border-color: white;
 }
 
-/* Main */
-.main {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    background-color: #000;
-    overflow: hidden;
-}
-
 /* About */
 .about {
-    background-color: bisque;
+    background-color: black;
+    margin-top: 50px;
+}
+
+.about__heading {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
+.about__header {
+    color: var(--white-color);
+    font-size: 4rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.about__label {
+    font-size: 1.6rem;
+    color: var(--label-color);
+    text-align: center;
+    font-style: italic;
+}
+
+.about__container {
+    align-items: flex-start;
+}
+
+.about__title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--white-color);
+    position: relative;
+}
+
+.about__title::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.about__desc {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
+    text-align: justify;
+    padding-right: 20px;
+}
+
+.about__skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.about__skills-item {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
 /* Skills */
@@ -271,12 +337,10 @@
     width: 100%;
     background-color: #000;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--label-color);
     font-size: 1.4rem;
     flex-shrink: 0;
-    background-color: #000;
     padding: 30px 0;
-    position: relative;
 }
 
 .footer::before {
@@ -292,18 +356,23 @@
 
 .footer__container {
     width: 100%;
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
 }
 
-/* Khối bên phải */
+.footer__copyright {
+    letter-spacing: 0.5px;
+}
+
 .footer__contacts {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    letter-spacing: 0.5px;
 }
 
 .footer__socials-list {
@@ -315,7 +384,7 @@
 }
 
 .footer__socials-item--link {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--label-color);
     font-size: 2.2rem;
     transition: color 0.3s ease;
 }
@@ -325,13 +394,54 @@
 }
 
 .footer__mail {
+    position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
     gap: 10px;
-    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+    transition: color 0.3s ease;
+}
+.footer__mail i {
+    font-size: 2rem;
 }
 
-.footer__copyright {
-    letter-spacing: 0.5px;
+.footer__mail:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: -35px;
+    left: -9%;
+    background-color: #fff;
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.copy-tooltip.show {
+    opacity: 1;
+    visibility: visible;
+    top: -45px;
+}
+
+.copy-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
 }
 

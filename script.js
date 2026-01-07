@@ -1,38 +1,56 @@
-    document.addEventListener('DOMContentLoaded', () => {
+function copyToClipboard() {
+    const email = "trungcuong.2006tn@gmail.com";
+    const tooltip = document.getElementById("mailTooltip");
+
+    // Lệnh copy vào bộ nhớ đệm
+    navigator.clipboard.writeText(email).then(() => {
+        // Hiện thông báo
+        tooltip.classList.add("show");
+
+        // Ẩn thông báo sau 2 giây
+        setTimeout(() => {
+            tooltip.classList.remove("show");
+        }, 2000);
+    }).catch(err => {
+        console.error('Lỗi khi copy: ', err);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.navbar__link');
     const tabs = document.querySelectorAll('.tab-content');
     const exploreBtn = document.querySelector('.header__cta-btn');
 
     // Tìm thẻ Logo
-const logo = document.querySelector('.navbar__logo--link');
+    const logo = document.querySelector('.navbar__logo--link');
 
-// Nếu tìm thấy logo, gán sự kiện click cho nó
-if (logo) {
-    logo.addEventListener('click', (e) => {
-        e.preventDefault(); // Ngăn trình duyệt load lại trang
-        const targetId = logo.getAttribute('href'); // Lấy giá trị "#header"
-        
-        // Gọi hàm switchTab đã có trong code của bạn
-        if (typeof switchTab === 'function') {
-            switchTab(targetId); 
-        } else {
-            // Nếu bạn chưa gom nhóm hàm switchTab, hãy dùng logic này:
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.getElementById('header').classList.add('active');
-            
-            // Cập nhật luôn trạng thái sáng đèn cho nút Home trên Navbar
-            document.querySelectorAll('.navbar__link').forEach(link => {
-                link.classList.remove('navbar__link--active');
-                if (link.getAttribute('href') === '#header') {
-                    link.classList.add('navbar__link--active');
-                }
-            });
-        }
-        
-        // Cuộn mượt lên đầu trang
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
+    // Nếu tìm thấy logo, gán sự kiện click cho nó
+    if (logo) {
+        logo.addEventListener('click', (e) => {
+            e.preventDefault(); // Ngăn trình duyệt load lại trang
+            const targetId = logo.getAttribute('href'); // Lấy giá trị "#header"
+
+            // Gọi hàm switchTab đã có trong code của bạn
+            if (typeof switchTab === 'function') {
+                switchTab(targetId);
+            } else {
+                // Nếu bạn chưa gom nhóm hàm switchTab, hãy dùng logic này:
+                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+                document.getElementById('header').classList.add('active');
+
+                // Cập nhật luôn trạng thái sáng đèn cho nút Home trên Navbar
+                document.querySelectorAll('.navbar__link').forEach(link => {
+                    link.classList.remove('navbar__link--active');
+                    if (link.getAttribute('href') === '#header') {
+                        link.classList.add('navbar__link--active');
+                    }
+                });
+            }
+
+            // Cuộn mượt lên đầu trang
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
     function switchTab(targetId) {
         // 1. Ẩn tất cả các tab (Xóa active)
@@ -42,7 +60,7 @@ if (logo) {
         // Lưu ý: targetId có thể là "#about" hoặc "about" tùy cách lấy, ta xử lý chuỗi ở đây
         const cleanId = targetId.replace('#', '');
         const targetTab = document.getElementById(cleanId);
-        
+
         if (targetTab) {
             targetTab.classList.add('active');
         }
@@ -78,5 +96,5 @@ if (logo) {
             switchTab('#projects');
         });
     }
+    switchTab('#header');
 });
-switchTab('#header');
